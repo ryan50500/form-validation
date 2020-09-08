@@ -3,7 +3,7 @@ const firstName = document.getElementById('firstName');
 const lastName = document.getElementById('lastName');
 const password = document.getElementById('password');
 const confirmPassword = document.getElementById('confirmPassword');
-const email = document.getElementById('firstName');
+const email = document.getElementById('email');
 // Form
 const form = document.getElementById('myForm');
 // Validation colors
@@ -18,6 +18,7 @@ form.addEventListener('submit', function(event) {
     validateFirstName() &&
     validateLastName() &&
     validatePassword() &&
+    validateEmail() &&
     validateConfirmPassword()
   ) {
     const name = firstName.value;
@@ -58,6 +59,11 @@ function validateLastName() {
   if (checkIfEmpty(lastName)) return;
   // is if it has only letters
   if (!checkIfOnlyLetters(lastName)) return;
+  return true;
+}
+function validateEmail() {
+  // check if email contains @
+if ( $('#email').val().indexOf('@') > 0 ) {
   return true;
 }
 function validatePassword() {

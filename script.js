@@ -15,14 +15,18 @@ form.addEventListener('submit', function(event) {
   // Prevent default behaviour
   event.preventDefault();
   if (
-    !validateFirstName() &&
-    !validateLastName() &&
-    !validatePassword() &&
-    !validateConfirmPassword()
+    validateFirstName() &&
+    validateLastName() &&
+    validatePassword() &&
+    validateConfirmPassword()
   ) {
-      console.log ('Please check form requirements are met');
-      document.getElementById('success').style.display = "block";
+    return true;
   }
+  else
+  {
+    console.log ('Please check form requirements are met');
+    document.getElementById('success').style.display = "block";
+}
 });
 
 // Validators

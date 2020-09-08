@@ -20,10 +20,8 @@ form.addEventListener('submit', function(event) {
     validatePassword() &&
     validateConfirmPassword()
   ) {
-
-    setTimeout(function() {
       console.log ('validation successful');
-    }, 1000);
+      document.getElementById('success').style.display = "block";
   }
 });
 

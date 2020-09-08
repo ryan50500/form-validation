@@ -63,7 +63,7 @@ function validateLastName() {
 }
 function validateEmail() {
   // check if email contains @
-if ( $('#email').val().indexOf('@') > 0 ) {
+if ( $('#email').val().indexOf('@') > 0 ) return;
   return true;
 }
 function validatePassword() {

@@ -20,13 +20,8 @@ form.addEventListener('submit', function(event) {
     validatePassword() &&
     validateConfirmPassword()
   ) {
-    return true;
+   return true;
   }
-  else
-  {
-    console.log ('Please check form requirements are met');
-    document.getElementById('success').style.display = "block";
-}
 });
 
 // Validators

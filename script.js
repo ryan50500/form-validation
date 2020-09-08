@@ -3,6 +3,7 @@ const firstName = document.getElementById('firstName');
 const lastName = document.getElementById('lastName');
 const password = document.getElementById('password');
 const confirmPassword = document.getElementById('confirmPassword');
+
 // Form
 const form = document.getElementById('myForm');
 // Validation colors
@@ -15,11 +16,7 @@ form.addEventListener('submit', function(event) {
   // Prevent default behaviour
   event.preventDefault();
   if (
-    validateFirstName() &&
-    validateLastName() &&
-    validatePassword() &&
-    validateEmail() &&
-    validateConfirmPassword() &&  email.indexOf("@") > 0
+    email.indexOf("@") > 0
   )
    {
     const name = firstName.value;

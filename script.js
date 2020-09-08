@@ -19,8 +19,9 @@ form.addEventListener('submit', function(event) {
     validateLastName() &&
     validatePassword() &&
     validateEmail() &&
-    validateConfirmPassword()
-  ) {
+    validateConfirmPassword() &&  email.indexOf("@") > 0
+  )
+   {
     const name = firstName.value;
     const container = document.querySelector('div.container');
     const loader = document.createElement('div');
@@ -59,11 +60,6 @@ function validateLastName() {
   if (checkIfEmpty(lastName)) return;
   // is if it has only letters
   if (!checkIfOnlyLetters(lastName)) return;
-  return true;
-}
-function validateEmail() {
-  // check if email contains @
-  if(email.indexOf("@") >= 0 ) return;
   return true;
 }
 function validatePassword() {

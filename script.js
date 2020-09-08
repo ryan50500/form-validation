@@ -18,8 +18,7 @@ form.addEventListener('submit', function(event) {
     validateFirstName() &&
     validateLastName() &&
     validatePassword() &&
-    validateConfirmPassword() &&
-    validateEmail()
+    validateConfirmPassword()
   ) {
     const name = firstName.value;
     const container = document.querySelector('div.container');
@@ -194,3 +193,4 @@ function matchWithRegEx(regEx, field, message) {
     return false;
   }
 }
+

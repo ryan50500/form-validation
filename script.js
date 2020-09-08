@@ -3,7 +3,7 @@ const firstName = document.getElementById('firstName');
 const lastName = document.getElementById('lastName');
 const password = document.getElementById('password');
 const confirmPassword = document.getElementById('confirmPassword');
-
+const email = document.getElementById('email');
 // Form
 const form = document.getElementById('myForm');
 // Validation colors
@@ -12,13 +12,15 @@ const red = '#F44336';
 
 // Handle form
 form.addEventListener('submit', function(event) {
-  const email = document.getElementById('email');
   // Prevent default behaviour
   event.preventDefault();
   if (
-    email.indexOf("@") > 0
-  )
-   {
+    validateFirstName() &&
+    validateLastName() &&
+    validatePassword() &&
+    validateEmail() &&
+    validateConfirmPassword()
+  ) {
     const name = firstName.value;
     const container = document.querySelector('div.container');
     const loader = document.createElement('div');
@@ -59,6 +61,7 @@ function validateLastName() {
   if (!checkIfOnlyLetters(lastName)) return;
   return true;
 }
+
 function validatePassword() {
   // Empty check
   if (checkIfEmpty(password)) return;
@@ -86,11 +89,13 @@ function validateConfirmPassword() {
   }
   return true;
 }
-// function validateEmail() {
-//   if (checkIfEmpty(email)) return;
-//   if (!containsCharacters(email, 5)) return;
-//   return true;
-// }
+function validateEmail() {
+  // if (checkIfEmpty(email)) return;
+  // if (!containsCharacters(email, 5)) return;
+  // return true;
+  if (email.indexOf("@") > 0) return;
+    return true;
+}
 // Utility functions
 function checkIfEmpty(field) {
   if (isEmpty(field.value.trim())) {

@@ -3,7 +3,6 @@ const firstName = document.getElementById('firstName');
 const lastName = document.getElementById('lastName');
 const password = document.getElementById('password');
 const confirmPassword = document.getElementById('confirmPassword');
-const email = document.getElementById('email');
 // Form
 const form = document.getElementById('myForm');
 // Validation colors
@@ -12,6 +11,7 @@ const red = '#F44336';
 
 // Handle form
 form.addEventListener('submit', function(event) {
+  const email = document.getElementById('email');
   // Prevent default behaviour
   event.preventDefault();
   if (
